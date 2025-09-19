@@ -1,0 +1,54 @@
+@import '../../../styles/main.scss';
+
+.menuFixed {
+  position: fixed;
+  padding: 10rem 0;
+  background: #fff;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  @include flex-center;
+
+  transition: all 0.3s ease;
+  ul {
+    margin-bottom: 0;
+    padding-left: 0;
+    text-align: center;
+    li {
+      padding: 4px 1.2rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 3.6rem;
+      opacity: 0;
+      transform: translateX(-5rem);
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      &:not(:last-child) {
+        margin-bottom: 1.6rem;
+      }
+      &:after {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: var(--brand-primary);
+        transition: all 0.5s ease-in-out;
+      }
+      &:hover {
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+    :global {
+      .li-active {
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

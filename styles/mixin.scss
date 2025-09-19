@@ -1,0 +1,66 @@
+
+//RESPONSIVE
+$DESKTOP-LG: 1600px;
+$DESKTOP: 1440px;
+$IPADPRO: 1366px;
+$IPAD: 1023px;
+$PHONE: 767px;
+
+@mixin Responsive($canvas) {
+  @if $canvas == PHONE {
+    @media only screen and (max-width: $PHONE) {
+      @content;
+    }
+  } @else if $canvas == IPAD {
+    @media only screen and (max-width: $IPAD) {
+      @content;
+    }
+  } @else if $canvas == IPADPRO {
+    @media only screen and (max-width: $IPADPRO) {
+      @content;
+    }
+  } @else if $canvas == DESKTOP {
+    @media only screen and (max-width: $DESKTOP) {
+      @content;
+    }
+  } @else if $canvas == DESKTOP-LG {
+    @media only screen and (max-width: $DESKTOP-LG) {
+      @content;
+    }
+  }
+}
+
+@mixin hidden-scroll {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  @mixin text-overflow($line: 1) {
+    @if $line == 1 {
+      display: block !important;
+      white-space: nowrap;
+    } @else {
+      display: -webkit-box !important;
+      white-space: unset;
+    }
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+  }
+  
+  @mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @mixin absolute-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }

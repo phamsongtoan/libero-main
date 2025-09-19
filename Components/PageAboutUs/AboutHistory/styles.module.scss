@@ -1,0 +1,62 @@
+@import '../../../styles/main.scss';
+
+.aboutHistory {
+  background-image: url('../../../assets/footer-img-1.jpeg');
+
+  :global {
+    .accordion {
+      background: transparent;
+      --bs-accordion-bg: transparent;
+      color: var(--primary-text--reverse);
+      --bs-accordion-color: var(--primary-text--reverse);
+    }
+    .accordion-item {
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      -ms-border-radius: 0;
+      -o-border-radius: 0;
+      border-color: rgba($color: #fff, $alpha: 0.2);
+      .accordion-button {
+        color: var(--primary-text--reverse);
+        display: flex;
+        justify-content: space-between;
+        &:hover {
+          .icon-plus {
+            transform: rotate(45deg);
+          }
+        }
+        .icon-plus {
+          font-size: 2.4rem;
+          transform: rotate(0);
+          transform-origin: center;
+          transition: all 0.3s ease;
+        }
+        &:after {
+          display: none;
+        }
+      }
+      .accordion-button:not(.collapsed) {
+        color: var(--primary-text--reverse);
+      }
+      .accordion-header {
+        span {
+          padding-top: 5rem;
+          padding-bottom: 5rem;
+        }
+      }
+      .accordion-body {
+        padding-top: 5rem;
+        border-top: 1px solid;
+        border-color: rgba($color: #fff, $alpha: 0.2);
+      }
+    }
+    [aria-expanded='true'] {
+      .icon-plus {
+        transform: rotate(45deg) !important;
+      }
+    }
+  }
+}

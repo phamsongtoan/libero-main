@@ -1,0 +1,44 @@
+@import '../../styles/main.scss';
+
+.pageProjectDetail {
+  :global {
+    .detail-content {
+      .content-img {
+        figure {
+          img {
+            height: auto !important;
+            &:not(:last-child) {
+              margin-bottom: 1.6rem;
+            }
+          }
+        }
+      }
+      .content-des {
+        position: sticky;
+        top: 0;
+        h3 {
+          font-size: 3rem;
+          font-weight: bold;
+        }
+        p {
+          line-height: 1.6;
+          font-size: 1.6rem;
+        }
+      }
+      .content-author {
+        ul {
+          padding: 0;
+          margin-bottom: 0;
+          li {
+            &:not(:last-child) {
+              margin-bottom: 1rem;
+            }
+          }
+          h5 {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

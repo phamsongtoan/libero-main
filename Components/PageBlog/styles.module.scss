@@ -1,0 +1,17 @@
+@import '../../styles/main.scss';
+
+.pageBlog {
+  //   color: var(--brand-primary);
+  :global {
+    .blog-banner {
+      height: 40vh;
+      background: #000 url('../../assets/projects/bannerabout.jpeg') no-repeat
+        center center/100% 100%;
+      background-size: cover;
+      position: relative;
+      color: var(--primary-text--reverse);
+      @include flex-center;
+   
+    }
+  }
+}

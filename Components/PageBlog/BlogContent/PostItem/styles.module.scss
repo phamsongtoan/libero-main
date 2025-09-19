@@ -1,0 +1,21 @@
+@import '../../../../styles/main.scss';
+
+.postItem{
+
+    :global {
+        .size-img{
+           img{
+            aspect-ratio: 5/3;
+           }
+            
+        }
+        span.sub{
+            font-style: italic;
+            opacity: 0.8;
+        }
+        p{
+            @include text-overflow(3);
+        }
+        
+    }
+}

@@ -1,0 +1,12 @@
+@import '../../styles/main.scss';
+
+.pageProject {
+  //   color: var(--brand-primary);
+  :global {
+    .project-content {
+      margin-top: 6rem;
+      .content-item {
+      }
+    }
+  }
+}

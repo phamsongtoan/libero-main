@@ -1,0 +1,43 @@
+@import '../../../styles/main.scss';
+
+.headingPage {
+  margin-bottom: 6rem;
+  padding: 8rem 0;
+  background: url(../../../assets/default_pattern.png) repeat center center/10px
+    auto;
+  @include Responsive(PHONE) {
+    padding: 4rem 0;
+  }
+  :global {
+    .list-project {
+      ul {
+        display: flex;
+        gap: 2.4rem;
+        align-items: center;
+        li {
+          cursor: pointer;
+          font-style: italic;
+          color: var(--secondary-text);
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 1px;
+            background: var(--brand-primary);
+            transition: all 0.3s ease;
+          }
+        }
+        .li-active {
+          color: var(--primary-text);
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

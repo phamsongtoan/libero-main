@@ -1,0 +1,45 @@
+@import '../../../styles/main.scss';
+
+.formSubmit {
+  :global {
+    form {
+      .form-right {
+        input,
+        textarea {
+          min-height: 4rem;
+          border-top: none;
+          border-right: none;
+          border-left: none;
+          border-radius: 0;
+          font-size: 1.6rem;
+          &:focus {
+            outline: none;
+            box-shadow: none;
+            border-color: #1b1b1b;
+          }
+          &::placeholder {
+            font-size: 1.6rem;
+          }
+        }
+        textarea {
+          border-bottom: none;
+        }
+      }
+      button {
+        width: 100%;
+        outline: none;
+        border: none;
+        box-shadow: none;
+        background: url(../../../assets/default_pattern.png) repeat center
+          center/10px auto;
+        min-height: 5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+          background: var(--background-orther);
+          color: var(--primary-text--reverse);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@import '../../../../styles/main.scss';
+
+.quickPost{
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    :global {
+        figure{
+            margin-bottom: 0;
+           img{
+            width: 80px;
+            aspect-ratio: 5/3
+           }
+        }
+        .title-blog{
+            display: flex;
+            flex-direction: column;
+            h3{
+                @include text-overflow(3);
+            }
+            span{
+                opacity: 0.8;
+                transition: all 0.3s ease;
+                font-style: italic;
+                &:hover{
+                    opacity: 1;
+                }
+            }
+        }
+        
+    }
+}

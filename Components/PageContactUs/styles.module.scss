@@ -1,0 +1,58 @@
+@import '../../styles/main.scss';
+
+.pageContactUs {
+  :global {
+    .data-map {
+      min-height: 500px;
+    }
+    .detail-inner {
+      ul {
+        font-size: 1.6rem;
+        li {
+          &:not(:last-child) {
+            margin-bottom: 1.2rem;
+          }
+        }
+      }
+    }
+    .contact-about {
+      background: var(--background-container);
+      &__inner {
+        @include Responsive(PHONE) {
+          justify-content: center;
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+     
+    }
+    .information-slider {
+      padding: 0 4rem;
+      @include Responsive(PHONE) {
+        padding: 0 2.4rem;
+      }
+      .button-arrow {
+        z-index: 10;
+        position: absolute;
+        top: 50%;
+        padding: 1.2rem;
+        background-color: var(--background-orther);
+        color: var(--primary-text--reverse);
+        @include flex-center;
+        cursor: pointer;
+        &--left {
+          left: 0;
+          transform: translate(-50%, -50%);
+        }
+        &--right {
+          right: 0;
+          transform: translate(50%, -50%);
+        }
+      }
+      .slider-main {
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+}

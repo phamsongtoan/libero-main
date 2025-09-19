@@ -1,0 +1,27 @@
+@import '../../../styles/main.scss';
+
+.bannerHome {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  :global {
+    .banner-logo {
+      @include absolute-center;
+      z-index: 10;
+      max-width: 20rem;
+    }
+
+    .banner-slick {
+      z-index: 1;
+      .slick-item {
+        figure {
+          img {
+            width: 100%;
+            object-fit: cover;
+            max-height: 45rem;
+          }
+        }
+      }
+    }
+  }
+}

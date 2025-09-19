@@ -1,0 +1,25 @@
+@import '../../../styles/main.scss';
+
+.aboutListProject {
+  padding: 4rem 0;
+  // background: url(../../../assets/default_pattern.png) repeat center center/10px auto;
+  figure {
+  }
+  :global {
+    .project-item {
+      padding: 0.8rem;
+    }
+    p {
+      max-width: 80%;
+      @include Responsive(IPAD) {
+        max-width: 100%;
+      }
+    }
+    .project-item {
+      p {
+        max-width: 100%;
+        @include text-overflow(3);
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@import '../../styles/main.scss';
+
+.headerStore {
+  position: sticky;
+  display: flex;
+  padding-left: 5%;
+  padding-right: 5%;
+  top: 0;
+  z-index: 999;
+  background: #fff;
+  @include Responsive(PHONE) {
+    flex-flow: row-reverse wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.6rem !important;
+    padding-bottom: 1.6rem !important;
+  }
+  :global {
+    .header-logo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 999;
+      figure {
+        max-width: 20rem;
+        margin-bottom: 0 !important;
+      }
+      @include Responsive(PHONE) {
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+      }
+    }
+    .header-burger {
+      position: relative;
+      z-index: 999;
+      @include Responsive(PHONE) {
+        margin-right: 1.6rem;
+      }
+    }
+    .header-submenu {
+      opacity: 0;
+      visibility: hidden;
+      &--show {
+        z-index: 998;
+        opacity: 1;
+        visibility: visible;
+        ul {
+          @for $i from 1 through 5 {
+            li:nth-child(#{$i}) {
+              opacity: 1;
+              transition-delay: (0.1 * $i) + s;
+              transform: translateX(0);
+            }
+          }
+        }
+      }
+    }
+  }
+}
